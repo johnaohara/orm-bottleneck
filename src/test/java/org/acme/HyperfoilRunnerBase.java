@@ -1,20 +1,16 @@
 package org.acme;
 
 import io.hyperfoil.api.config.Benchmark;
-import io.hyperfoil.api.config.BenchmarkData;
 import io.hyperfoil.api.statistics.StatisticsSnapshot;
 import io.hyperfoil.core.impl.LocalBenchmarkData;
 import io.hyperfoil.core.impl.LocalSimulationRunner;
 import io.hyperfoil.core.parser.BenchmarkParser;
 import io.hyperfoil.core.parser.ParserException;
 import io.hyperfoil.core.util.Util;
-import io.hyperfoil.maven.RunMojo;
-import io.quarkus.runtime.test.TestHttpEndpointProvider;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
-import org.junit.jupiter.api.Test;
 
 import java.io.*;
 import java.net.URISyntaxException;
@@ -22,8 +18,6 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.util.HashMap;
-import java.util.List;
-import java.util.function.Function;
 
 import static io.vertx.core.logging.LoggerFactory.LOGGER_DELEGATE_FACTORY_CLASS_NAME;
 
@@ -39,7 +33,7 @@ public class HyperfoilRunnerBase  {
 
     static {
         System.setProperty(LOGGER_DELEGATE_FACTORY_CLASS_NAME, "io.vertx.core.logging.Log4j2LogDelegateFactory");
-        log = LoggerFactory.getLogger(RunMojo.class);
+        log = LoggerFactory.getLogger(HyperfoilRunnerBase.class);
     }
 
 

@@ -94,12 +94,6 @@
         </dependency>
         <dependency>
             <groupId>io.hyperfoil</groupId>
-            <artifactId>hyperfoil-maven-plugin</artifactId>
-            <version>0.12</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.hyperfoil</groupId>
             <artifactId>hyperfoil-core</artifactId>
             <version>0.12</version>
             <scope>test</scope>
