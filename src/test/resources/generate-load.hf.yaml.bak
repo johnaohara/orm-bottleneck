@@ -1,0 +1,39 @@
+name: random-urls
+http:
+  host: http://localhost:8081
+# 10 users will be starting the scenario every second
+usersPerSec: 1
+duration: 5s
+scenario:
+  - test:
+      - httpRequest:
+          GET: /fruits
+          handler:
+            status:
+              range: 2xx
+      - httpRequest:
+          POST: /fruits
+          headers:
+            content-type: application/json
+          body: |
+            {
+              "name": "Another fruit"
+            }
+      - httpRequest:
+          GET: /fruits/count
+          handler:
+            status:
+              range: 2xx
+      - httpRequest:
+          GET: /fruits/1
+          handler:
+            status:
+              range: 2xx
+      - httpRequest:
+          PUT: /fruits/1
+          headers:
+            content-type: application/json
+          body: |
+            {
+              "name": "Another fruit"
+            }
